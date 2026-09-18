@@ -7,7 +7,7 @@ related_daily:
   - "[[2026-09-18]]"
 ---
 
-# LangGraph状态与节点结果的校验边界
+# 07-LangGraph状态与节点结果的校验边界
 
 本篇回答：Pydantic 应该用于整个 State，还是用于某个节点产生的数据？两者能不能同时存在？本轮学习目标是问题分流助手；完整条件分支、消息状态和真实 LLM 接入尚待继续学习。
 
@@ -70,7 +70,7 @@ assert result["route"] == "search"
 
 `decision.model_dump()` 在这里恰好得到 `{"route": ..., "reason": ...}`，对应 State 的两个键。图应用这些局部更新，原来的 `question` 保留。并不是任意 Pydantic 模型的导出结果都可以直接作为任意图的更新：若 State 用 `decision` 这个嵌套键保存结果，就必须按该状态设计返回相应结构。
 
-接入真实模型时，可将模拟部分替换为 [[LangChain结构化输出与本地校验]] 中的 `router.invoke(...)`，成功返回的 `decision` 已经过解析与校验。条件边再读取路由值选择节点；这个转换本身不会自动创建分支。
+接入真实模型时，可将模拟部分替换为 [[06-LangChain结构化输出与本地校验]] 中的 `router.invoke(...)`，成功返回的 `decision` 已经过解析与校验。条件边再读取路由值选择节点；这个转换本身不会自动创建分支。
 
 ## Pydantic State 不是全程校验的承诺
 

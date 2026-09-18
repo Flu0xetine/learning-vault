@@ -7,7 +7,7 @@ related_daily:
   - "[[2026-09-18]]"
 ---
 
-# BaseModel继承与运行时校验
+# 01-BaseModel继承与运行时校验
 
 本篇回答：`class Request(BaseModel)` 是什么意思？类型注解已经写了 `int`，为什么还需要 Pydantic？适用于 Pydantic v2。
 
@@ -45,17 +45,17 @@ assert isinstance(request.max_results, int)
 | `TypedDict` | 字典应有哪些键、各键值的类型 | 否，运行时对象仍是字典 |
 | `BaseModel` 子类 | 字段类型、约束及自定义校验规则 | 正常构造或调用校验方法时会执行 |
 
-例如 `age: int = "hello"` 不会仅因类型注解而在 Python 运行时报错。`TypedDict` 也不是带自动检查能力的字典容器；类型检查工具可以发现不匹配，但那不是运行时的异常。
+例如 ==`age: int = "hello"` 不会仅因类型注解而在 Python 运行时报错==。`TypedDict` 也不是带自动检查能力的字典容器；类型检查工具可以发现不匹配，但那不是运行时的异常。
 
 ## 转换成功不代表原始类型相同
 
 本轮练习中的三种输入：
 
-| 输入 | 结果 | 原因 |
-|---|---|---|
-| `Request(question="RAG？", max_results=3)` | 通过，字段是 `int` | 已是整数 |
-| `Request(question="RAG？", max_results="3")` | 通过，字段是 `int` | 默认允许把数字字符串解析为整数 |
-| `Request(question="RAG？")` | 失败 | `max_results` 没有默认值，是必填字段 |
+| 输入                                          | 结果           | 原因                            |
+| ------------------------------------------- | ------------ | ----------------------------- |
+| `Request(question="RAG？", max_results=3)`   | 通过，字段是 `int` | 已是整数                          |
+| `Request(question="RAG？", max_results="3")` | 通过，字段是 `int` | 默认允许把数字字符串解析为整数               |
+| `Request(question="RAG？")`                  | 失败           | ==`max_results` 没有默认值，是必填字段== |
 
 如果传入 `"three"`，则无法解析为整数。Pydantic 不会猜测所有输入的含义，允许哪些转换取决于字段类型及配置。
 
@@ -71,10 +71,10 @@ assert isinstance(request.max_results, int)
 
 **问：`Request` 和 `request` 哪个可以作为输出结构传给框架？**
 
-答：传入模型类 `Request` 描述规则；实例 `request` 已包含一份具体数据。框架如何利用它，见 [[LangChain结构化输出与本地校验]]。
+答：传入模型类 `Request` 描述规则；实例 `request` 已包含一份具体数据。框架如何利用它，见 [[06-LangChain结构化输出与本地校验]]。
 
 **问：`"3"` 被转成整数后，是否意味着所有外部输入都会被自动修好？**
 
 答：不会。可转换且满足约束才通过；无法转换、缺少必填字段或违反规则都会失败。
 
-下一篇：[[字段的必填性与取值约束]]。
+下一篇：[[02-字段的必填性与取值约束]]。
