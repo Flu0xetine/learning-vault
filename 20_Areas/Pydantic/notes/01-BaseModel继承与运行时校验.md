@@ -2,14 +2,17 @@
 area: Pydantic
 type: note
 created: 2026-09-18
-updated: 2026-09-18
+updated: 2026-09-19
 related_daily:
+  - "[[2026-09-19]]"
   - "[[2026-09-18]]"
 ---
 
 # 01-BaseModel继承与运行时校验
 
-本篇回答：`class Request(BaseModel)` 是什么意思？类型注解已经写了 `int`，为什么还需要 Pydantic？适用于 Pydantic v2。
+## 本篇概览
+
+本篇从 `class Request(BaseModel)` 解释继承关系、模型类与实例的区别，并比较普通字典、类型注解、`TypedDict` 与 Pydantic 的运行时校验能力。通过数字字符串转整数的例子，说明正常构造模型时如何接收、转换和检查数据，并介绍严格模式与赋值校验的边界。核心是：类型声明本身不会在运行时阻止错误输入，Pydantic 的校验也需要在明确的构造或校验步骤中执行；本文适用于 Pydantic v2。
 
 ## BaseModel 是父类，不是形参
 
@@ -77,4 +80,6 @@ assert isinstance(request.max_results, int)
 
 答：不会。可转换且满足约束才通过；无法转换、缺少必填字段或违反规则都会失败。
 
-下一篇：[[02-字段的必填性与取值约束]]。
+---
+
+下一篇：[[02-字段的必填性与取值约束]]

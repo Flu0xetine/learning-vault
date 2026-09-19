@@ -2,14 +2,17 @@
 area: Pydantic
 type: note
 created: 2026-09-18
-updated: 2026-09-18
+updated: 2026-09-19
 related_daily:
+  - "[[2026-09-19]]"
   - "[[2026-09-18]]"
 ---
 
 # 04-模型与字典及JSON的转换
 
-本篇回答：外部字典怎样进入模型？怎样导出结果？为什么模型转成字典后不能继续用点号访问？JSON 字符串与 JSON Schema 有什么区别？
+## 本篇概览
+
+本篇用 `model_validate()`、`model_validate_json()` 将字典或 JSON 文本校验为模型实例，用 `model_dump()`、`model_dump_json()` 将实例导出为字典或 JSON 字符串。另以 `model_json_schema()` 区分类的结构规则与实例中的真实数据。操作前先确认对象类型：模型实例用属性访问，字典用键访问，JSON 文本需要解析；导出的是处理后的数据，不是原始输入的还原。
 
 ## 先判断对象是什么，再选择方法
 
@@ -52,7 +55,7 @@ assert isinstance(result["start_year"], int)
 
 为什么导出后仍是整数？因为导出的是模型保存的处理后数据，不是将原始输入原样退回。转换成字典改变了容器类型与访问方式，不会把整数自动还原成最初的数字字符串。
 
-## JSON 是文本，不是字典
+## JSON 
 
 ```python
 filters = SearchFilter.model_validate_json(text)
@@ -92,3 +95,7 @@ result = filters.model_dump()
 **问：`model_dump_json()` 与 `model_json_schema()` 可以互换吗？** 答：不可以。前者导出实例数据的 JSON 文本，后者生成模型结构规则的字典。
 
 相关：[[05-外部字段映射与额外字段处理]]、[[06-LangChain结构化输出与本地校验]]。
+
+---
+
+下一篇：[[05-外部字段映射与额外字段处理]]

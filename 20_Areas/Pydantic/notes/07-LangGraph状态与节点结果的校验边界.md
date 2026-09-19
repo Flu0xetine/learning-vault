@@ -2,14 +2,17 @@
 area: Pydantic
 type: note
 created: 2026-09-18
-updated: 2026-09-18
+updated: 2026-09-19
 related_daily:
+  - "[[2026-09-19]]"
   - "[[2026-09-18]]"
 ---
 
 # 07-LangGraph状态与节点结果的校验边界
 
-本篇回答：Pydantic 应该用于整个 State，还是用于某个节点产生的数据？两者能不能同时存在？本轮学习目标是问题分流助手；完整条件分支、消息状态和真实 LLM 接入尚待继续学习。
+## 本篇概览
+
+本篇区分外部输入模型、节点结果模型和 LangGraph 共享 State 的职责，并用 `StateGraph` 的最小离线示例演示：读取状态、调用 `model_validate()` 校验数据，再以 `model_dump()` 返回局部更新。它说明 `TypedDict` 状态与节点内部的 Pydantic 模型可以配合使用，关键在于结果如何映射到状态字段以及校验放在哪里。核心是：声明 Pydantic State 不能直接等同于所有更新和最终输出都已校验，字段取值约束也不会自动创建条件边；完整分流、消息状态与真实 LLM 接入仍待继续学习。
 
 ## 三种不同职责
 
@@ -95,3 +98,7 @@ assert result["route"] == "search"
 **问：`Literal` 只允许两个路由值，是否就已经连好了图的两条条件边？**
 
 答：没有。Pydantic 限制值，LangGraph 的条件边决定执行路径。
+
+---
+
+下一篇：暂无

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20_Areas/Pydantic/notes/04-模型与字典及JSON的转换.md",
+                "file": "00_Daily/2026-09-19.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04-模型与字典及JSON的转换"
+              "title": "2026-09-19"
             }
           }
         ]
@@ -83,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "074193668b8c0ef7",
@@ -100,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "20_Areas/Pydantic/notes/04-模型与字典及JSON的转换.md",
+                "file": "00_Daily/2026-09-19.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "20_Areas/Pydantic/notes/04-模型与字典及JSON的转换.md",
+                "file": "00_Daily/2026-09-19.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -162,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20_Areas/Pydantic/notes/04-模型与字典及JSON的转换.md",
+                "file": "00_Daily/2026-09-19.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -191,16 +190,28 @@
   },
   "active": "63b5ed3fd098e268",
   "lastOpenFiles": [
-    "20_Areas/Pydantic/notes/03-字段校验器与模型校验器.md",
-    "20_Areas/Pydantic/notes/02-字段的必填性与取值约束.md",
-    "20_Areas/Pydantic/notes/01-BaseModel继承与运行时校验.md",
-    "00_Daily/2026-09-18.md",
+    "20_Areas/FastAPI/notes/004-Protocol与接口兼容.md",
+    "20_Areas/FastAPI/notes/003-超时取消与任务清理.md",
+    "20_Areas/FastAPI/FastAPI.md",
+    "00_Daily/2026-09-19.md",
+    "20_Areas/FastAPI/notes/001-协程与事件循环的等待机制.md",
+    "90_Templates/Daily_Template.md",
+    "20_Areas/FastAPI/notes/002-并发任务与结果收集.md",
+    "20_Areas/FastAPI/notes",
+    "20_Areas/FastAPI/codes/03-timeout-cancel.py",
+    "20_Areas/FastAPI/codes/03-async-timeout.py",
+    "20_Areas/FastAPI/codes/02-并发.py",
+    "20_Areas/FastAPI/codes/01-async.py",
+    "20_Areas/FastAPI/codes",
+    "20_Areas/Pydantic/notes/07-LangGraph状态与节点结果的校验边界.md",
     "20_Areas/Pydantic/notes/06-LangChain结构化输出与本地校验.md",
     "20_Areas/Pydantic/notes/04-模型与字典及JSON的转换.md",
-    "20_Areas/Pydantic/notes/07-LangGraph状态与节点结果的校验边界.md",
+    "20_Areas/Pydantic/notes/02-字段的必填性与取值约束.md",
+    "20_Areas/Pydantic/notes/01-BaseModel继承与运行时校验.md",
+    "20_Areas/Pydantic/notes/03-字段校验器与模型校验器.md",
     "20_Areas/Pydantic/notes/05-外部字段映射与额外字段处理.md",
+    "00_Daily/2026-09-18.md",
     "20_Areas/Pydantic/notes/外部字段映射与额外字段处理.md",
-    "90_Templates/Daily_Template.md",
     "2026-09-18.md",
     "20_Areas/Pydantic/notes/模型与字典及JSON的转换.md",
     "20_Areas/Pydantic/notes/LangChain结构化输出与本地校验.md",

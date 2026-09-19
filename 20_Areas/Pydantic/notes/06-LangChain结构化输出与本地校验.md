@@ -2,14 +2,17 @@
 area: Pydantic
 type: note
 created: 2026-09-18
-updated: 2026-09-18
+updated: 2026-09-19
 related_daily:
+  - "[[2026-09-19]]"
   - "[[2026-09-18]]"
 ---
 
 # 06-LangChain结构化输出与本地校验
 
-本篇回答：Pydantic 类怎样描述大模型的输出？谁生成值、谁检查值？为什么设置了结构化输出还需要处理校验失败？本篇连接 [[04-模型与字典及JSON的转换]] 与 [[07-LangGraph状态与节点结果的校验边界]]。
+## 本篇概览
+
+本篇承接 [[04-模型与字典及JSON的转换]]，说明 Pydantic 模型类和 JSON Schema 如何为 `with_structured_output()` 提供输出规则，以及 `invoke()` 如何完成模型调用、解析和本地校验。通过 `include_raw` 区分默认返回的模型实例与包含原始响应、解析结果和错误信息的包装字典。核心是：自定义 Python 校验逻辑不会自动完整变成模型端的约束，结构合规也不保证决策正确；校验失败需要明确的错误处理和重试策略。真实模型接入与重试尚待实操，后续应用见 [[07-LangGraph状态与节点结果的校验边界]]。
 
 ## 传入模型类，生成具体值
 
@@ -32,7 +35,8 @@ decision = router.invoke("请判断问题的处理路线：今天上海天气怎
 print(decision.route)
 ```
 
-传入的是模型类 `RouteDecision`，不是已经填了 `route="search"` 的实例。类提供规则，值由大模型生成；`with_structured_output()` 配置调用和解析流程，`invoke()` 才发起请求。
+==传入的是模型类 `RouteDecision`，不是已经填了 `route="search"` 的实例。类提供规则，值由大模型生成；==
+`with_structured_output()` 配置调用和解析流程，`invoke()` 才发起请求。
 
 在默认 `include_raw=False`、成功解析及校验的情况下，`decision` 是 `RouteDecision` 实例，可以读取 `decision.route`。这与导出后的字典访问方式不同。[LangChain 结构化输出](https://docs.langchain.com/oss/python/langchain/models#structured-output)
 
@@ -124,3 +128,7 @@ else:
 **问：`include_raw=True` 后能直接写 `result.route` 吗？**
 
 答：不能。先检查错误，再使用 `result["parsed"].route`。
+
+---
+
+下一篇：[[07-LangGraph状态与节点结果的校验边界]]
