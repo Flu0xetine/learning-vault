@@ -202,4 +202,4 @@ print(answer_question(FakeModel(), "什么是 FastAPI？"))
 
 ---
 
-下一篇：暂无
+下一篇：[[005-上下文管理器与资源清理]]
