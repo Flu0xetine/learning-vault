@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Daily/2026-09-20.md",
+                "file": "00_Daily/2026-09-22.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-09-20"
+              "title": "2026-09-22"
             }
           }
         ]
@@ -190,21 +190,22 @@
   },
   "active": "63b5ed3fd098e268",
   "lastOpenFiles": [
-    "20_Areas/FastAPI/project/__pycache__/main.cpython-313.pyc",
-    "20_Areas/FastAPI/project/__pycache__",
-    "20_Areas/FastAPI/project/main.py",
-    "20_Areas/FastAPI/project/uv.lock",
-    "20_Areas/FastAPI/project/README.md",
-    "20_Areas/FastAPI/project/pyproject.toml",
-    "20_Areas/FastAPI/project/src/project/__init__.py",
-    "20_Areas/FastAPI/project/src/project",
-    "20_Areas/FastAPI/project/src",
-    "20_Areas/FastAPI/notes/005-上下文管理器与资源清理.md",
-    "20_Areas/FastAPI/project",
-    "20_Areas/FastAPI/codes/06-contextmanager.py",
-    "20_Areas/FastAPI/codes/05-with copy.py",
-    "00_Daily/2026-09-19.md",
+    "20_Areas/LangGraph/codes/07_3_tool_node.py",
+    "20_Areas/LangGraph/codes/07_2_tool_node.py",
+    "20_Areas/LangGraph/codes/07_2_tool2schema copy.py",
+    "20_Areas/LangGraph/codes/07_2_tool2schema.py",
+    "20_Areas/LangGraph/codes/07_1_tool.py",
+    "20_Areas/LangGraph/codes/07_2tool2schema.py",
+    "20_Areas/LangGraph/codes/07_tool2schema.py",
+    "20_Areas/LangGraph/codes/07_tool copy.py",
+    "20_Areas/LangGraph/codes/07_tool.py",
     "00_Daily/2026-09-20.md",
+    "00_Daily/2026-09-22.md",
+    "20_Areas/LangGraph/codes/06_并行节点.py",
+    "20_Areas/LangGraph/codes/03_my_reducer.py",
+    "20_Areas/FastAPI/project/README.md",
+    "20_Areas/FastAPI/notes/005-上下文管理器与资源清理.md",
+    "00_Daily/2026-09-19.md",
     "20_Areas/FastAPI/notes/004-Protocol与接口兼容.md",
     "20_Areas/FastAPI/notes/003-超时取消与任务清理.md",
     "20_Areas/FastAPI/FastAPI.md",
@@ -224,7 +225,6 @@
     "20_Areas/Pydantic/notes/模型与字典及JSON的转换.md",
     "20_Areas/Pydantic/notes/LangChain结构化输出与本地校验.md",
     "20_Areas/Pydantic/notes/BaseModel继承与运行时校验.md",
-    "20_Areas/Pydantic/Pydantic.md",
-    "20_Areas/Pydantic/notes/字段的必填性与取值约束.md"
+    "20_Areas/Pydantic/Pydantic.md"
   ]
 }
